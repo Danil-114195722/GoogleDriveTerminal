@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add .gitignore">
-      <change afterPath="$PROJECT_DIR$/processes/pwd_command.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/processes/system_interaction.py" afterDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add system commands amd &quot;pwd&quot; on Google Drive">
+      <change afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/work_with_state/id_cur_dir_writter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/recent_dirs_id" beforeDir="false" afterPath="$PROJECT_DIR$/state/recent_dirs_id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/cd_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/cd_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/mkdir_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/mkdir_command.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,11 +172,20 @@
       <option name="project" value="LOCAL" />
       <updated>1695157941246</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add system commands amd &quot;pwd&quot; on Google Drive">
+      <option name="closed" value="true" />
+      <created>1695237332788</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695237332788</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore" />
+    <MESSAGE value="Add system commands amd &quot;pwd&quot; on Google Drive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add system commands amd &quot;pwd&quot; on Google Drive" />
   </component>
 </project>

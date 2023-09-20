@@ -4,7 +4,7 @@
 from re import sub as re_sub
 
 from work_with_state.current_dir_writter import get_cur_dir
-from processes import (cd_command, ls_command, pwd_command,
+from processes import (cd_command, ls_command, pwd_command, mkdir_command,
                        system_interaction)
 
 
@@ -43,6 +43,10 @@ def process_manage(command: str) -> None:
         feedback = 'OK: pwd'
         dir_path = pwd_command.show_cur_dir_path()
         print(dir_path)
+
+    elif command.startswith('mkdir'):
+        name_new_dir = re_sub('\s', ' ', command[5:]).strip()
+        feedback = mkdir_command.make_new_dir(name_new_dir)
 
     else:
         feedback = 'ERROR: invalid command!'

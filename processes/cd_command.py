@@ -2,12 +2,14 @@ from data.constants import SERVICE, ROOT_CONTENT
 from work_with_state.current_dir_writter import set_cur_dir, get_cur_dir
 from work_with_state.dir_content_writter import set_cur_dir_content, get_list_content
 from work_with_state.recent_dir_id_writter import set_id_recent_dirs, get_id_recent_dir
+from work_with_state.id_cur_dir_writter import set_cur_dir_id
 
 
 # переход в корень диска
 def move_to_root() -> str:
     set_id_recent_dirs(dir_id='', clear=True)
     set_cur_dir(directory='/')
+    set_cur_dir_id(dir_id='')
     set_cur_dir_content(content=ROOT_CONTENT)
 
     return 'OK: cd /'
@@ -47,6 +49,7 @@ def move_to_dir(dir_name: str) -> str:
 
     set_id_recent_dirs(dir_id=id_parent)
     set_cur_dir(directory=new_dir)
+    set_cur_dir_id(dir_id=folder_id)
     set_cur_dir_content(content=dir_content)
 
     return f'OK: cd {new_dir}'
@@ -83,8 +86,8 @@ def move_one_step_down() -> str:
     new_dir = recent_dir_path[:recent_dir_path.rfind('/')]
 
     set_cur_dir(directory=new_dir)
+    set_cur_dir_id(dir_id=recent_dir_id)
     set_cur_dir_content(content=dir_content)
-
     return 'OK: cd ..'
 
 
