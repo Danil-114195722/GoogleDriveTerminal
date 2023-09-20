@@ -4,13 +4,23 @@
 from re import sub as re_sub
 
 from work_with_state.current_dir_writter import get_cur_dir
-from processes import cd_command, ls_command
+from processes import (cd_command, ls_command, pwd_command,
+                       system_interaction)
 
 
 # обработка команд и распределение задач
 def process_manage(command: str) -> None:
+    # нажатый Enter
+    if command == '':
+        return
+    # любая системная команда
+    elif command.startswith('!'):
+        sys_com = command[1:]
+        system_interaction.system_command_exec(command=sys_com)
+        feedback = 'OK: system command'
+
     # команда "cd"
-    if command.startswith('cd'):
+    elif command.startswith('cd'):
         # требуемая директория
         need_dir = re_sub('\s|(\./)', ' ', command[2:]).strip()
 
@@ -29,8 +39,11 @@ def process_manage(command: str) -> None:
         filelist = ls_command.show_cur_dir_content()
         print(filelist)
 
-    elif command == '':
-        return
+    elif command == 'pwd':
+        feedback = 'OK: pwd'
+        dir_path = pwd_command.show_cur_dir_path()
+        print(dir_path)
+
     else:
         feedback = 'ERROR: invalid command!'
 
