@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add mkdir command">
-      <change afterPath="$PROJECT_DIR$/processes/rename_command.py" afterDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Can't add rm command(; add rename command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/cd_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/cd_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/id_cur_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
@@ -211,13 +210,22 @@
       <option name="project" value="LOCAL" />
       <updated>1695240230663</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Can't add rm command(; add rename command">
+      <option name="closed" value="true" />
+      <created>1695287661151</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695287661151</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add .gitignore" />
     <MESSAGE value="Add system commands amd &quot;pwd&quot; on Google Drive" />
     <MESSAGE value="Add mkdir command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mkdir command" />
+    <MESSAGE value="Can't add rm command(; add rename command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can't add rm command(; add rename command" />
   </component>
 </project>

@@ -23,24 +23,16 @@ def process_manage(command: str) -> None:
     # команда "cd"
     elif command.startswith('cd'):
         # требуемая директория
-        need_dir = re_sub('\s|(\./)', ' ', command[2:]).strip()
+        need_dir = re_sub('\s', ' ', command[2:]).strip()
+        # перемещение
+        feedback = cd_command.main_cd(need_dir=need_dir)
 
-        # идём в рута
-        if need_dir == '/':
-            feedback = cd_command.move_to_root()
-        # идём на уровень ниже
-        elif need_dir == '..':
-            feedback = cd_command.move_one_step_down()
-        # идём в следующий указанный каталог
-        else:
-            feedback = cd_command.move_to_dir(dir_name=need_dir)
-
-    elif command == 'ls':
+    elif command.startswith('ls'):
         feedback = 'OK: ls'
         filelist = ls_command.show_cur_dir_content()
         print(filelist)
 
-    elif command == 'pwd':
+    elif command.startswith('pwd'):
         feedback = 'OK: pwd'
         dir_path = pwd_command.show_cur_dir_path()
         print(dir_path)

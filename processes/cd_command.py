@@ -91,23 +91,33 @@ def move_one_step_down() -> str:
     return 'OK: cd ..'
 
 
+# главная функция cd, распределяющая множественные перемещения
+def main_cd(need_dir: str) -> str:
+    # разбиваем данный путь на части (убираем из пути точку, если она есть)
+    path_to_need_dir = list(filter(lambda elem: elem != '.', need_dir.split('/')))
 
-# def test(dir_name: str) -> bool:
-#     # путь к прошлой папке
-#     recent_dir = get_cur_dir()
-#
-#     dir_files = SERVICE.files().list(q=f"'1F3e6OwNmOor-CA_F35Ci-aYSjaWqQPdn' in parents", fields="files(id, name, mimeType)").execute()
-#
-#     dir_content = [
-#         (
-#             'dir' if file.get('mimeType') == 'application/vnd.google-apps.folder' else 'file',
-#             file.get('name'),
-#             file.get('id'),
-#         )
-#         for file in dir_files.get('files')
-#     ]
-#
-#     set_cur_dir(directory=recent_dir + '/' + dir_name)
-#     set_cur_dir_content(content=dir_content)
-#     return True
+    # print(path_to_need_dir)
 
+    if need_dir == '/':
+        # идём в рута
+        feedback = move_to_root()
+
+    else:
+        for part_path in path_to_need_dir:
+            if part_path == '':
+                # идём в рута
+                one_feedback = move_to_root()
+            elif part_path == '..':
+                # идём на уровень ниже
+                one_feedback = move_one_step_down()
+            else:
+                # идём в следующий указанный каталог
+                one_feedback = move_to_dir(dir_name=part_path)
+
+            if one_feedback.startswith('ERROR'):
+                feedback = f'ERROR: invalid path part "{part_path}" of path "{need_dir}"'
+                break
+        else:
+            feedback = f'OK: cd {need_dir}'
+
+    return feedback
