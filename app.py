@@ -4,7 +4,8 @@
 from re import sub as re_sub
 
 from work_with_state.current_dir_writter import get_cur_dir
-from processes import (cd_command, ls_command, pwd_command, mkdir_command,
+from processes import (cd_command, ls_command, pwd_command,
+                       mkdir_command, rename_command,
                        system_interaction)
 
 
@@ -47,6 +48,10 @@ def process_manage(command: str) -> None:
     elif command.startswith('mkdir'):
         name_new_dir = re_sub('\s', ' ', command[5:]).strip()
         feedback = mkdir_command.make_new_dir(name_new_dir)
+
+    elif command.startswith('rename'):
+        old_name, new_name = re_sub('\s', ' ', command[6:]).strip().split(' ')
+        feedback = rename_command.rename_file(old_name=old_name, new_name=new_name)
 
     else:
         feedback = 'ERROR: invalid command!'

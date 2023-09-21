@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add system commands amd &quot;pwd&quot; on Google Drive">
-      <change afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work_with_state/id_cur_dir_writter.py" afterDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add mkdir command">
+      <change afterPath="$PROJECT_DIR$/processes/rename_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processes/cd_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/cd_command.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processes/mkdir_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/mkdir_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/id_cur_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/recent_dirs_id" beforeDir="false" afterPath="$PROJECT_DIR$/state/recent_dirs_id" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +127,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="rename_command" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GoogleDriveTerminal" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/processes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/processes/rename_command.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="system_interaction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GoogleDriveTerminal" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,6 +172,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.rename_command" />
         <item itemvalue="Python.system_interaction" />
         <item itemvalue="Python.half_method" />
       </list>
@@ -180,12 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1695237332788</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add mkdir command">
+      <option name="closed" value="true" />
+      <created>1695240230663</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695240230663</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add .gitignore" />
     <MESSAGE value="Add system commands amd &quot;pwd&quot; on Google Drive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add system commands amd &quot;pwd&quot; on Google Drive" />
+    <MESSAGE value="Add mkdir command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add mkdir command" />
   </component>
 </project>
