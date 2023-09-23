@@ -1,8 +1,5 @@
 from data.constants import SERVICE
-from work_with_state.current_dir_writter import set_cur_dir, get_cur_dir
 from work_with_state.dir_content_writter import set_cur_dir_content, get_list_content
-from work_with_state.recent_dir_id_writter import set_id_recent_dirs, get_id_recent_dir
-from work_with_state.id_cur_dir_writter import set_cur_dir_id
 
 
 # переименование файла или папки
@@ -20,7 +17,7 @@ def rename_file(old_name: str, new_name: str):
         elem_id = elem_line[-1]
 
     # добавляем расширение старого названия к новому, если оно не было указано в новом
-    if '.' not in new_name:
+    if '.' not in new_name and elem_id[0] == 'file':
         new_name += '.' + old_name.split('.')[-1]
 
     # Выполнение запроса на обновление метаданных для переименования объекта
