@@ -25,5 +25,5 @@ def upload_file(file_name: str, path: str) -> str:
     # обновляем список содержимого текущей папки
     cur_content.append(['file', file_name, new_file.get("id")])
     set_cur_dir_content(content=cur_content)
-    print(f'File "{file_name}" have been uploaded successfully')
+    print(f'Uploading "{file_name}"\nSuccessfully')
     return f'OK: file "{file_name}" was uploaded'

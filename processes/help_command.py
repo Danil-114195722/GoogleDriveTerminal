@@ -7,11 +7,13 @@ def show_help_manual() -> str:
     4-->  cd "path"
     5-->  mkdir "name"
     6-->  rename ./"old_name" ./"new_name"
-    7-->  put "name"
-    8-->  get "name"
+    7-->  put "file name"
+          put -r "dir name"
+    8-->  get "file name"
+          get -r "dir name"
     9-->  "command 1" && "command 2"
     10->  "command 1" && \\
-         "command 2" && "command 3"
+          "command 2" && "command 3"
 
 SAMPLES:
 
@@ -43,15 +45,19 @@ SAMPLES:
           Output: (rename dir "new_dir" to "my_secret_info" on your Google Drive Account)
                 (None)
     7-->  Input:
-                put **********************
-          Output: (********************** on your Google Drive Account)
-                (None)
+                put -r /home/user/need/my_project
+          Output: (upload dir "my_project" from local PC into current dir on your Google Drive Account)
+                Uploading "first.py"
+                Uploading "second.py"
+                Uploading "third.py"
+                ...
+                Uploading "any.py"
+                Successfully
     8-->  Input:
                 get ./my_table.xlsx
-          Output: (upload file "my_table.xlsx" from current dir on Google Drive Account into current local dir)
-                Download:
-                100%
-                File "my_table.xlsx" have been uploaded successfully
+          Output: (download file "my_table.xlsx" from current dir on Google Drive Account into current local dir)
+                Downloading "my_table.xlsx"
+                Successfully
     9-->  "command 1" && "command 2"
     10->  "command 1" && \
         "command 2" && "command 3"

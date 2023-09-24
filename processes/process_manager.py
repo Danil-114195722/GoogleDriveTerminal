@@ -83,10 +83,15 @@ def process_rename(command: str) -> str:
 
 
 def process_get(command: str) -> str:
-    # требуемый файл
-    need_file = re_sub('\s|(\./)', ' ', command[3:]).strip()
-    # скачивание
-    result = get_command.download_file(file_name=need_file)
+    clear_command = re_sub('\s|(\./)', ' ', command[3:]).strip()
+
+    if clear_command.startswith('-r'):
+        return 'ERROR: пока не сделал'
+    else:
+        # требуемый файл
+        need_file = clear_command
+        # скачивание
+        result = get_command.download_file(file_name=need_file)
 
     return result
 
@@ -101,6 +106,7 @@ def process_put(command: str) -> str:
         need_file_with_path = clear_command
         # полный путь с именем файла
         path = abspath(need_file_with_path)
+        print([path])
 
         # если такого файла не существует
         if not exists(path):

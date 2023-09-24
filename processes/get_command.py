@@ -32,8 +32,9 @@ def download_file(file_name: str) -> str:
         # загрузка байт в локальный файл
         with open(file_name, 'wb') as local_file:
             local_file.write(file.getvalue())
-            print(f'Download: {int(status.progress() * 100)}%\nFile "{file_name}" have been uploaded successfully')
+
+        print(f'Downloading "{file_name}"\nSuccessfully')
         return f'OK: file "{file_name}" was downloaded'
 
     except HttpError as error:
-        return f'ERROR: you got this error: {error}'
+        return f'ERROR: you got HttpError while processing "get" command: {error}'
