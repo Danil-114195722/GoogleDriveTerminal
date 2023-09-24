@@ -42,8 +42,16 @@ SAMPLES:
                 rename ./new_dir ./my_secret_info
           Output: (rename dir "new_dir" to "my_secret_info" on your Google Drive Account)
                 (None)
-    7-->  put "name"
-    8-->  get "name"
+    7-->  Input:
+                put **********************
+          Output: (********************** on your Google Drive Account)
+                (None)
+    8-->  Input:
+                get ./my_table.xlsx
+          Output: (upload file "my_table.xlsx" from current dir on Google Drive Account into current local dir)
+                Download:
+                100%
+                File "my_table.xlsx" have been uploaded successfully
     9-->  "command 1" && "command 2"
     10->  "command 1" && \
         "command 2" && "command 3"

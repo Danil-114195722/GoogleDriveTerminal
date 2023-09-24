@@ -1,9 +1,10 @@
+from os.path import abspath, isfile, exists
 from re import sub as re_sub, findall as re_findall
 
 from processes import (cd_command, ls_command, pwd_command,
                        mkdir_command, rename_command,
                        system_interaction, help_command,
-                       get_command)
+                       get_command, put_command)
 
 
 def process_help(command: str) -> str:
@@ -90,6 +91,32 @@ def process_get(command: str) -> str:
     return result
 
 
+def process_put(command: str) -> str:
+    clear_command = re_sub('\s', ' ', command[3:]).strip()
+
+    if clear_command.startswith('-r'):
+        return 'ERROR: пока не сделал'
+    else:
+        # требуемый файл
+        need_file_with_path = clear_command
+        # полный путь с именем файла
+        path = abspath(need_file_with_path)
+
+        # если такого файла не существует
+        if not exists(path):
+            return 'ERROR: such file not exists!'
+
+        # проверка на файл
+        if isfile(path):
+            file_name = path.split('/')[-1]
+            # загрузка
+            result = put_command.upload_file(file_name=file_name, path=path)
+        else:
+            return 'ERROR: to upload dir add key "-r"'
+
+    return result
+
+
 # обработка команд и распределение задач
 def process_manage(command: str) -> str:
     # словарь с доступными командами
@@ -102,6 +129,7 @@ def process_manage(command: str) -> str:
         'mkdir': process_mkdir,
         'rename': process_rename,
         'get': process_get,
+        'put': process_put,
     }
 
     try:

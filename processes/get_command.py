@@ -1,4 +1,5 @@
 import io
+
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaIoBaseDownload
 
@@ -15,7 +16,7 @@ def download_file(file_name: str) -> str:
         if file_name not in map(lambda sublist: sublist[1], cur_content):
             return 'ERROR: such file not found!'
         elif list(filter(lambda sublist: sublist[1] == file_name, cur_content))[0][0] == 'dir':
-            return 'ERROR: cannot upload dir!'
+            return 'ERROR: to upload dir add key "-r"'
         else:
             # ID файла, который нужно скачать
             file_id = list(filter(lambda sublist: sublist[1] == file_name, cur_content))[0][-1]
@@ -24,17 +25,15 @@ def download_file(file_name: str) -> str:
         file = io.BytesIO()
         downloader = MediaIoBaseDownload(file, request)
 
-        print('Download:')
         done = False
         while not done:
             status, done = downloader.next_chunk()
-            print(f'\r{int(status.progress() * 100)}%', end='')
 
         # загрузка байт в локальный файл
         with open(file_name, 'wb') as local_file:
             local_file.write(file.getvalue())
-            print(f'\nFile "{file_name}" have been uploaded successfully')
-        return f'OK: file "{file_name}" was uploaded'
+            print(f'Download: {int(status.progress() * 100)}%\nFile "{file_name}" have been uploaded successfully')
+        return f'OK: file "{file_name}" was downloaded'
 
     except HttpError as error:
         return f'ERROR: you got this error: {error}'

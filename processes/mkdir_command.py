@@ -19,9 +19,9 @@ def make_new_dir(new_dir_name: str) -> str:
         'mimeType': 'application/vnd.google-apps.folder',
         'parents': [parent_dir_id]
     }
-    file = SERVICE.files().create(body=folder_metadata, fields='id').execute()
+    new_dir = SERVICE.files().create(body=folder_metadata, fields='id').execute()
 
     # обновляем список содержимого текущей папки
-    cur_content.append(['dir', new_dir_name, file.get("id")])
+    cur_content.append(['dir', new_dir_name, new_dir.get("id")])
     set_cur_dir_content(content=cur_content)
     return f'OK: mkdir {new_dir_name}'

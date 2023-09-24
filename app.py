@@ -15,12 +15,12 @@ def main() -> None:
             command = input(f'drive{":" + get_cur_dir()}> ').strip()
         # выход из программы
         except KeyboardInterrupt:
-            print('\nGoodbye!')
+            print('\n\033[31mGoodbye!\033[0m')
             break
 
         # выход из программы
         if command == 'exit' or command == 'quit':
-            print('Goodbye!')
+            print('\033[31mGoodbye!\033[0m')
             break
 
         # обработка команды м получение ответа выполнения
@@ -28,7 +28,7 @@ def main() -> None:
 
         # печатаем только ошибки
         if feedback.startswith('ERROR') or feedback.startswith('FATAL'):
-            print(feedback)
+            print(f'\033[31m{feedback}\033[0m')
 
 
 if __name__ == '__main__':

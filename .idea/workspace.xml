@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Move process manager to other file; create help; correct &quot;rename&quot; and &quot;mkdir&quot; commands">
-      <change afterPath="$PROJECT_DIR$/processes/get_command.py" afterDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add command &quot;get&quot;; add BASE_DIR for using app out of root project dir">
+      <change afterPath="$PROJECT_DIR$/processes/put_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abc_junk/junk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abc_junk/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abc_junk/pyenv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/get_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/get_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/help_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/help_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/mkdir_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/mkdir_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processes/process_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/process_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
@@ -63,7 +70,7 @@
       <recent name="$PROJECT_DIR$/junk" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.constants">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GoogleDriveTerminal" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -192,9 +199,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.constants" />
         <item itemvalue="Python.get_command" />
-        <item itemvalue="Python.app" />
         <item itemvalue="Python.process_manager" />
         <item itemvalue="Python.rename_command" />
       </list>
@@ -257,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695497081451</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add command &quot;get&quot;; add BASE_DIR for using app out of root project dir">
+      <option name="closed" value="true" />
+      <created>1695544189778</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695544189778</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,6 +282,7 @@
     <MESSAGE value="Can't add rm command(; add rename command" />
     <MESSAGE value="Redo command &quot;cd&quot;: can go to difficult path" />
     <MESSAGE value="Move process manager to other file; create help; correct &quot;rename&quot; and &quot;mkdir&quot; commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move process manager to other file; create help; correct &quot;rename&quot; and &quot;mkdir&quot; commands" />
+    <MESSAGE value="Add command &quot;get&quot;; add BASE_DIR for using app out of root project dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add command &quot;get&quot;; add BASE_DIR for using app out of root project dir" />
   </component>
 </project>
