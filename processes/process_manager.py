@@ -2,7 +2,15 @@ from re import sub as re_sub, findall as re_findall
 
 from processes import (cd_command, ls_command, pwd_command,
                        mkdir_command, rename_command,
-                       system_interaction, help_command)
+                       system_interaction, help_command,
+                       get_command)
+
+
+def process_help(command: str) -> str:
+    content = help_command.show_help_manual()
+    print(content)
+
+    return f'OK: {command}'
 
 
 def process_sys(command: str) -> str:
@@ -73,11 +81,13 @@ def process_rename(command: str) -> str:
     return result
 
 
-def process_help(command: str) -> str:
-    content = help_command.show_help_manual()
-    print(content)
+def process_get(command: str) -> str:
+    # требуемый файл
+    need_file = re_sub('\s|(\./)', ' ', command[3:]).strip()
+    # скачивание
+    result = get_command.download_file(file_name=need_file)
 
-    return f'OK: {command}'
+    return result
 
 
 # обработка команд и распределение задач
@@ -91,6 +101,7 @@ def process_manage(command: str) -> str:
         'pwd': process_pwd,
         'mkdir': process_mkdir,
         'rename': process_rename,
+        'get': process_get,
     }
 
     try:
