@@ -16,6 +16,7 @@ def show_help_manual() -> str:
     11->  "command 1" && \\
           "command 2" && "command 3"
     12->  help
+    13->  rm (just for files created by service account)
 
 SAMPLES:
 
@@ -64,13 +65,27 @@ SAMPLES:
                 r
           Output: (update content of current dir (here: "MyDir") on Google Drive Account)
                 MyDir's content was updated
-    10->  "command 1" && "command 2"
-    11->  "command 1" && \
-        "command 2" && "command 3"
+    10->  Input:
+                r && ls
+          Output: (update content of current dir (here: "MyDir") AND list of files and dirs for current dir on Google Drive Account)
+                MyDir's content was updated
+                All: 3 || Dirs: 1 || Files: 2
+                dir -- test1
+                file -- cat.png
+                file -- document.docx
+    11->  Input:
+                rename ./new_dir \
+                ./my_secret_info
+          Output: ([using enter and 2 lines]: rename dir "new_dir" to "my_secret_info" on your Google Drive Account)
+                (None)
     12->  Input:
                 help
           Output:
                 (this manual)
+    13->  Input:
+                rm ./junk_file.txt
+          Output: (remove file "junk_file.txt" from current dir (if it created by service account) on your Google Drive Account)
+                Remove "junk_file.txt": successfully
 '''
 
     return help_content

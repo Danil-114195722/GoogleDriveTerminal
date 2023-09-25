@@ -1,5 +1,6 @@
 from re import sub as re_sub, findall as re_findall
 
+from work_with_state.current_dir_writter import get_cur_dir
 from processes import (cd_command, ls_command, pwd_command,
                        mkdir_command, rename_command,
                        system_interaction, help_command,
@@ -84,13 +85,7 @@ def process_rename(command: str) -> str:
 def process_get(command: str) -> str:
     clear_command = re_sub('\s|(\./)', ' ', command[3:]).strip()
 
-    if clear_command.startswith('-r'):
-        return 'ERROR: пока не сделал'
-    else:
-        # требуемый файл
-        need_file = clear_command
-        # скачивание
-        result = get_command.download_file(file_name=need_file)
+    result = get_command.main_get(clear_command=clear_command)
 
     return result
 
@@ -108,6 +103,11 @@ def process_put(command: str) -> str:
 
 
 def process_r(command: str) -> str:
+    cur_dir = get_cur_dir()
+    # если обновление происходит в корне
+    if cur_dir == '/':
+        return "ERROR: you haven't to update root dir, it's stable!"
+
     ls_command.update_content_info()
     return f"OK: {command}"
 
