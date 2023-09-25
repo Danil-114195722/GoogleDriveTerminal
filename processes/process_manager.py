@@ -1,4 +1,3 @@
-from os.path import abspath, isfile, exists
 from re import sub as re_sub, findall as re_findall
 
 from processes import (cd_command, ls_command, pwd_command,
@@ -99,28 +98,18 @@ def process_get(command: str) -> str:
 def process_put(command: str) -> str:
     clear_command = re_sub('\s', ' ', command[3:]).strip()
 
+    result = put_command.main_put(clear_command=clear_command)
+
     if clear_command.startswith('-r'):
-        return 'ERROR: пока не сделал'
-    else:
-        # требуемый файл
-        need_file_with_path = clear_command
-        # полный путь с именем файла
-        path = abspath(need_file_with_path)
-        print([path])
-
-        # если такого файла не существует
-        if not exists(path):
-            return 'ERROR: such file not exists!'
-
-        # проверка на файл
-        if isfile(path):
-            file_name = path.split('/')[-1]
-            # загрузка
-            result = put_command.upload_file(file_name=file_name, path=path)
-        else:
-            return 'ERROR: to upload dir add key "-r"'
+        print('Update current dir info...')
+        ls_command.update_content_info()
 
     return result
+
+
+def process_r(command: str) -> str:
+    ls_command.update_content_info()
+    return f"OK: {command}"
 
 
 # обработка команд и распределение задач
@@ -136,6 +125,7 @@ def process_manage(command: str) -> str:
         'rename': process_rename,
         'get': process_get,
         'put': process_put,
+        'r': process_r,
     }
 
     try:
@@ -151,7 +141,7 @@ def process_manage(command: str) -> str:
     # если команды нет в словаре
     except KeyError:
         feedback = 'ERROR: invalid command!'
-    except Exception as error:
-        return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+    # except Exception as error:
+    #     return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
 
     return feedback

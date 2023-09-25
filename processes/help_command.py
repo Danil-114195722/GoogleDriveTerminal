@@ -11,9 +11,11 @@ def show_help_manual() -> str:
           put -r "dir name"
     8-->  get "file name"
           get -r "dir name"
-    9-->  "command 1" && "command 2"
-    10->  "command 1" && \\
+    9-->  r
+    10->  "command 1" && "command 2"
+    11->  "command 1" && \\
           "command 2" && "command 3"
+    12->  help
 
 SAMPLES:
 
@@ -47,20 +49,28 @@ SAMPLES:
     7-->  Input:
                 put -r /home/user/need/my_project
           Output: (upload dir "my_project" from local PC into current dir on your Google Drive Account)
-                Uploading "first.py"
-                Uploading "second.py"
-                Uploading "third.py"
+                START:
+                Uploading "first.py": successfully
+                Uploading "second.py": successfully
                 ...
-                Uploading "any.py"
-                Successfully
+                Uploading "any.py": successfully
+                :FINISHED
     8-->  Input:
                 get ./my_table.xlsx
           Output: (download file "my_table.xlsx" from current dir on Google Drive Account into current local dir)
                 Downloading "my_table.xlsx"
                 Successfully
-    9-->  "command 1" && "command 2"
-    10->  "command 1" && \
+    9-->  Input:
+                r
+          Output: (update content of current dir (here: "MyDir") on Google Drive Account)
+                MyDir's content was updated
+    10->  "command 1" && "command 2"
+    11->  "command 1" && \
         "command 2" && "command 3"
+    12->  Input:
+                help
+          Output:
+                (this manual)
 '''
 
     return help_content
