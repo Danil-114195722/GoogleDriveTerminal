@@ -13,10 +13,8 @@ def show_help_manual() -> str:
           get -r "dir name"
     9-->  r
     10->  "command 1" && "command 2"
-    11->  "command 1" && \\
-          "command 2" && "command 3"
-    12->  help
-    13->  rm (just for files created by service account)
+    11->  help
+    12->  rm (just for files created by service account)
 
 SAMPLES:
 
@@ -74,15 +72,10 @@ SAMPLES:
                 file -- cat.png
                 file -- document.docx
     11->  Input:
-                rename ./new_dir \
-                ./my_secret_info
-          Output: ([using enter and 2 lines]: rename dir "new_dir" to "my_secret_info" on your Google Drive Account)
-                (None)
-    12->  Input:
                 help
           Output:
                 (this manual)
-    13->  Input:
+    12->  Input:
                 rm ./junk_file.txt
           Output: (remove file "junk_file.txt" from current dir (if it created by service account) on your Google Drive Account)
                 Remove "junk_file.txt": successfully
