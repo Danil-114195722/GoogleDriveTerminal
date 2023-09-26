@@ -2,7 +2,7 @@ from re import sub as re_sub, findall as re_findall
 
 from work_with_state.current_dir_writter import get_cur_dir
 from processes import (cd_command, ls_command, pwd_command,
-                       mkdir_command, rename_command,
+                       mkdir_command, rename_command, rm_command,
                        system_interaction, help_command,
                        get_command, put_command)
 
@@ -112,6 +112,13 @@ def process_r(command: str) -> str:
     return f"OK: {command}"
 
 
+def process_rm(command: str) -> str:
+    file_name = re_sub('\s|(\./)', ' ', command[2:]).strip()
+
+    result = rm_command.remove_service_file(file_name=file_name)
+    return result
+
+
 # обработка команд и распределение задач
 def process_manage(command: str) -> str:
     # словарь с доступными командами
@@ -126,6 +133,7 @@ def process_manage(command: str) -> str:
         'get': process_get,
         'put': process_put,
         'r': process_r,
+        'rm': process_rm,
     }
 
     try:
@@ -141,7 +149,7 @@ def process_manage(command: str) -> str:
     # если команды нет в словаре
     except KeyError:
         feedback = 'ERROR: invalid command!'
-    except Exception as error:
-        return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+    # except Exception as error:
+    #     return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
 
     return feedback

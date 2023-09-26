@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;&amp;&amp;&quot; for create request with several commands; correct outputting info from &quot;put&quot; and &quot;get&quot; command">
-      <change afterPath="$PROJECT_DIR$/processes/rm_command.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processes/help_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/help_command.py" afterDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;data&quot; dir">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/to_upload_dir" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +303,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695717011670</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add &quot;rm&quot; schema">
+      <option name="closed" value="true" />
+      <created>1695718209614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695718209614</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add &quot;data&quot; dir">
+      <option name="closed" value="true" />
+      <created>1695718247430</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695718247430</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -321,6 +335,8 @@
     <MESSAGE value="Add &quot;put -r&quot; for uploading dirs; add updater current dir content; correct help" />
     <MESSAGE value="Add &quot;get -r&quot; for downloading dirs; correct help" />
     <MESSAGE value="Add &quot;&amp;&amp;&quot; for create request with several commands; correct outputting info from &quot;put&quot; and &quot;get&quot; command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;&amp;&amp;&quot; for create request with several commands; correct outputting info from &quot;put&quot; and &quot;get&quot; command" />
+    <MESSAGE value="Add &quot;rm&quot; schema" />
+    <MESSAGE value="Add &quot;data&quot; dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;data&quot; dir" />
   </component>
 </project>
