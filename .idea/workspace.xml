@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;data&quot; dir">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/to_upload_dir" beforeDir="false" />
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;rm&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/service_account_access.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/service_account_access.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/id_cur_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state/recent_dirs_id" beforeDir="false" afterPath="$PROJECT_DIR$/state/recent_dirs_id" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6f23f2ea4806a978248b729d7a25e690c0ed2531" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -38,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last.edited.regexp&quot;: &quot;cd ../   \\  &lt; &gt; + | ? \&quot; ' , &quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/danil/Documents/RKSI/Base_of_programming/My_PZ&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last.edited.regexp": "cd ../   \\  < > + | ? \" ' , ",
+    "last_opened_file_path": "/home/danil/Documents/RKSI/Base_of_programming/My_PZ",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -190,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
-        <item itemvalue="Python.process_manager" />
-        <item itemvalue="Python.constants" />
-        <item itemvalue="Python.get_command" />
         <item itemvalue="Python.rename_command" />
+        <item itemvalue="Python.process_manager" />
+        <item itemvalue="Python.get_command" />
+        <item itemvalue="Python.constants" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -319,8 +330,27 @@
       <option name="project" value="LOCAL" />
       <updated>1695718247430</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add &quot;rm&quot;">
+      <option name="closed" value="true" />
+      <created>1695738475899</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695738475899</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add .gitignore" />
@@ -337,6 +367,7 @@
     <MESSAGE value="Add &quot;&amp;&amp;&quot; for create request with several commands; correct outputting info from &quot;put&quot; and &quot;get&quot; command" />
     <MESSAGE value="Add &quot;rm&quot; schema" />
     <MESSAGE value="Add &quot;data&quot; dir" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;data&quot; dir" />
+    <MESSAGE value="Add &quot;rm&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;rm&quot;" />
   </component>
 </project>
