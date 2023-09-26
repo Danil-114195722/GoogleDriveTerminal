@@ -2,7 +2,7 @@
 ### 1) Register on [Google Cloud](https://cloud.google.com/artifact-registry)
 ### 2) Create [new project](https://console.cloud.google.com/projectcreate?previousPage=%2Fapis%2Flibrary%3Fproject%3Dconcise-ion-399020&organizationId=0) (use existing project if you want)
 ### 3) Go to project's [manage](https://console.cloud.google.com/apis/library) and select your new project
-![Снимок экрана от 2023-09-26 22-41-50.png](..%2F..%2F..%2FPictures%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202023-09-26%2022-41-50.png)
+![screen_proj_manage.png](screen_proj_manage.png)
 ### 4) Open Navigation Menu and choose "IAM & Admin" -> "Service accounts"
 ### 5) Create service account (you can use existing service account if you want) 
 ### 6) Choose in list your service account and go to "Actions" -> "Manage keys"
@@ -49,6 +49,12 @@ ROOT_CONTENT = [
 ]
 ```
 ### 9) Alright!
+
+<br><hr>
+
+## You can remove "/full/path/to/project/screen_proj_manage.png", it's just for good README
+
+<br><hr>
 
 ## Supported commands:
 ### 1)  ! "sys command"
