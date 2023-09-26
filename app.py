@@ -23,12 +23,15 @@ def main() -> None:
             print('\033[31mGoodbye!\033[0m')
             break
 
-        # обработка команды м получение ответа выполнения
-        feedback = process_manager.process_manage(command=command)
+        # если в строке несколько команд (указаны через "&&"), то они выполнятся по отдельности
+        # если команда одна (нет знака "&&"), то она просто выполнится
+        for subcommand in command.split('&&'):
+            # обработка команды и получение ответа выполнения
+            feedback = process_manager.process_manage(command=subcommand)
 
-        # печатаем только ошибки
-        if feedback.startswith('ERROR') or feedback.startswith('FATAL'):
-            print(f'\033[31m{feedback}\033[0m')
+            # печатаем только ошибки
+            if feedback.startswith('ERROR') or feedback.startswith('FATAL'):
+                print(f'\033[31m{feedback}\033[0m')
 
 
 if __name__ == '__main__':

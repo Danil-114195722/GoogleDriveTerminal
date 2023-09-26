@@ -22,6 +22,9 @@ def download_file(file_name: str) -> str:
             # ID файла, который нужно скачать
             file_id = list(filter(lambda sublist: sublist[1] == file_name, cur_content))[0][-1]
 
+        # вывод начала загрузки
+        print(f'Downloading "{file_name}"')
+
         request = SERVICE.files().get_media(fileId=file_id)
         file = io.BytesIO()
         downloader = MediaIoBaseDownload(file, request)
@@ -34,7 +37,8 @@ def download_file(file_name: str) -> str:
         with open(file_name, 'wb') as local_file:
             local_file.write(file.getvalue())
 
-        print(f'Downloading "{file_name}"\nSuccessfully')
+        # вывод успеха
+        print('Successfully')
         return f'OK: file "{file_name}" was downloaded'
 
     except HttpError as error:
@@ -42,6 +46,9 @@ def download_file(file_name: str) -> str:
 
 
 def download_file_custom_dir(file_id: str, file_name: str, need_local_dir: str) -> None:
+    # вывод начала загрузки
+    print(f'Downloading "{file_name}"', end='')
+
     request = SERVICE.files().get_media(fileId=file_id)
     file = io.BytesIO()
     downloader = MediaIoBaseDownload(file, request)
@@ -54,7 +61,8 @@ def download_file_custom_dir(file_id: str, file_name: str, need_local_dir: str) 
     with open(f'{need_local_dir}/{file_name}', 'wb') as local_file:
         local_file.write(file.getvalue())
 
-    print(f'Downloading "{file_name}": successfully')
+    # вывод успеха
+    print(': successfully')
 
 
 def download_dir(dir_name: str, path: str, content: list) -> None:

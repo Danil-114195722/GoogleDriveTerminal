@@ -130,18 +130,18 @@ def process_manage(command: str) -> str:
 
     try:
         # название вызываемой команды
-        command_word = '!' if command.startswith('!') else command.split()[0]
+        command_word = ('!' if command.startswith('!') else command.split()[0].strip())
     # нажатый Enter
     except IndexError:
         return 'OK: Enter'
 
     # выполнение команды
     try:
-        feedback = command_dir[command_word](command=command)
+        feedback = command_dir[command_word](command=command.strip())
     # если команды нет в словаре
     except KeyError:
         feedback = 'ERROR: invalid command!'
-    # except Exception as error:
-    #     return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+    except Exception as error:
+        return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
 
     return feedback

@@ -14,6 +14,9 @@ def upload_file(file_name: str, path: str) -> str:
     # контент текущей директории
     cur_content = get_list_content()
 
+    # вывод начала загрузки
+    print(f'Uploading "{file_name}"')
+
     file_metadata = {
         'name': file_name,
         'parents': [parent_dir_id]
@@ -24,11 +27,16 @@ def upload_file(file_name: str, path: str) -> str:
     # обновляем список содержимого текущей папки
     cur_content.append(['file', file_name, new_file.get("id")])
     set_cur_dir_content(content=cur_content)
-    print(f'Uploading "{file_name}"\nSuccessfully')
+
+    # вывод успеха
+    print('Successfully')
     return f'OK: file "{file_name}" was uploaded'
 
 
 def upload_file_custom_parent(file_name: str, path: str, parent_dir_id: str) -> None:
+    # вывод начала загрузки
+    print(f'Uploading "{file_name}"', end='')
+
     file_metadata = {
         'name': file_name,
         'parents': [parent_dir_id]
@@ -36,7 +44,8 @@ def upload_file_custom_parent(file_name: str, path: str, parent_dir_id: str) -> 
     media = MediaFileUpload(path, resumable=True)
     SERVICE.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
-    print(f'Uploading "{file_name}": successfully')
+    # вывод успеха
+    print(': successfully')
 
 
 def upload_dir(dir_name: str, path: str, parent_id: str = get_cur_dir_id()) -> None:
@@ -61,15 +70,11 @@ def upload_dir(dir_name: str, path: str, parent_id: str = get_cur_dir_id()) -> N
             # загрузка следующей директории
             upload_dir(path=path_to_elem, dir_name=file, parent_id=new_dir_id)
 
-    # # обновляем список содержимого текущей папки
-    # cur_content.append(['dir', dir_name, new_dir.get("id")])
-    # set_cur_dir_content(content=cur_content)
-
 
 def main_put(clear_command: str) -> str:
     # запрет загружать каталог в корень
     if not get_cur_dir_id():
-        return 'ERROR: cannot upload dir in "root"'
+        return 'ERROR: cannot upload dir/files in "root"'
 
     if clear_command.startswith('-r'):
         # полный путь с именем каталога

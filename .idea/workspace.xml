@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;put -r&quot; for uploading dirs; add updater current dir content; correct help">
+    <list default="true" id="72acb6e9-bcbc-48ba-b431-e97581b0cedf" name="Changes" comment="Add &quot;get -r&quot; for downloading dirs; correct help">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processes/get_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/get_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/processes/process_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/process_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processes/put_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/processes/put_command.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/current_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/current_dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/dir_content" beforeDir="false" afterPath="$PROJECT_DIR$/state/dir_content" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/state/id_cur_dir" beforeDir="false" afterPath="$PROJECT_DIR$/state/id_cur_dir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state/recent_dirs_id" beforeDir="false" afterPath="$PROJECT_DIR$/state/recent_dirs_id" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695636058925</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add &quot;get -r&quot; for downloading dirs; correct help">
+      <option name="closed" value="true" />
+      <created>1695671678974</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695671678974</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -307,6 +315,7 @@
     <MESSAGE value="Add command &quot;put&quot;" />
     <MESSAGE value="Add &quot;put&quot; and &quot;get&quot; desc into &quot;help&quot; command" />
     <MESSAGE value="Add &quot;put -r&quot; for uploading dirs; add updater current dir content; correct help" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;put -r&quot; for uploading dirs; add updater current dir content; correct help" />
+    <MESSAGE value="Add &quot;get -r&quot; for downloading dirs; correct help" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;get -r&quot; for downloading dirs; correct help" />
   </component>
 </project>
