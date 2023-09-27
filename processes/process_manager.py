@@ -1,6 +1,7 @@
 from re import sub as re_sub, findall as re_findall
 
 from work_with_state.current_dir_writter import get_cur_dir
+from work_with_state.history_writter import get_history, add_history
 from processes import (cd_command, ls_command, pwd_command,
                        mkdir_command, rename_command, rm_command,
                        system_interaction, help_command,
@@ -119,6 +120,22 @@ def process_rm(command: str) -> str:
     return result
 
 
+def process_history(command: str) -> str:
+    try:
+        num = int(command.replace('history', '').strip())
+    except ValueError:
+        num = ''
+
+    all_his = get_history()
+    if not num:
+        history = '\n'.join(all_his)
+    else:
+        history = '\n'.join(all_his[-num:])
+
+    print(history)
+    return f'OK: {command}'
+
+
 # обработка команд и распределение задач
 def process_manage(command: str) -> str:
     # словарь с доступными командами
@@ -134,6 +151,7 @@ def process_manage(command: str) -> str:
         'put': process_put,
         'r': process_r,
         'rm': process_rm,
+        'history': process_history,
     }
 
     try:
@@ -149,7 +167,10 @@ def process_manage(command: str) -> str:
     # если команды нет в словаре
     except KeyError:
         feedback = 'ERROR: invalid command!'
-    # except Exception as error:
-    #     return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+    except Exception as error:
+        return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+
+    # добавляем команду в историю
+    add_history(command=command)
 
     return feedback

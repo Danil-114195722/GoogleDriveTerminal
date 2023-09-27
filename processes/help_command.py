@@ -15,6 +15,7 @@ def show_help_manual() -> str:
     10->  "command 1" && "command 2"
     11->  help
     12->  rm (just for files created by service account)
+    13->  history
 
 SAMPLES:
 
@@ -79,6 +80,13 @@ SAMPLES:
                 rm ./junk_file.txt
           Output: (remove file "junk_file.txt" from current dir (if it created by service account) on your Google Drive Account)
                 Remove "junk_file.txt": successfully
+    13->  Input:
+                history
+          Output: (can contain last 50 commands, output it)
+                ls
+                cd ./MyDir && put ./best_code.cxx
+                ...
+                history
 '''
 
     return help_content

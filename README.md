@@ -71,5 +71,4 @@ ROOT_CONTENT = [
 ### 10) "command 1" && "command 2"
 ### 11) help
 ### 12) rm (just for files created by service account)
-
-### -  13) drive history
+### 13) history
