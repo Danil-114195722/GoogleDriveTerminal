@@ -128,9 +128,9 @@ def process_history(command: str) -> str:
 
     all_his = get_history()
     if not num:
-        history = '\n'.join(all_his)
+        history = '\n '.join(all_his)
     else:
-        history = '\n'.join(all_his[-num:])
+        history = '\n '.join(all_his[-num:])
 
     print(history)
     return f'OK: {command}'
