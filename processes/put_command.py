@@ -14,6 +14,15 @@ def upload_file(file_name: str, path: str) -> str:
     # контент текущей директории
     cur_content = get_list_content()
 
+    # юзер пытается загрузить файл с именем, которое уже есть у другого файла на диске
+    if file_name in map(lambda sublist: sublist[1], cur_content):
+        action = input('\033[33mWARNING: such file already exist! Continue OR rename it and enter this command again. Continue? [y, n] \033[0m')
+        if action != 'y':
+            print('Command was canceled!')
+            return 'OK: cancel command'
+        else:
+            print('Continue...')
+
     # вывод начала загрузки
     print(f'Uploading "{file_name}"')
 
@@ -29,7 +38,7 @@ def upload_file(file_name: str, path: str) -> str:
     set_cur_dir_content(content=cur_content)
 
     # вывод успеха
-    print('Successfully')
+    print('\033[32mSuccessfully\033[0m')
     return f'OK: file "{file_name}" was uploaded'
 
 
@@ -45,10 +54,22 @@ def upload_file_custom_parent(file_name: str, path: str, parent_dir_id: str) -> 
     SERVICE.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
     # вывод успеха
-    print(': successfully')
+    print('\033[32m: successfully\033[0m')
 
 
 def upload_dir(dir_name: str, path: str, parent_id: str = get_cur_dir_id()) -> None:
+    # контент текущей директории
+    cur_content = get_list_content()
+
+    # юзер пытается загрузить директорию с именем, которое уже есть у другой директории на диске
+    if dir_name in map(lambda sublist: sublist[1], cur_content):
+        action = input('\033[33mWARNING: such dir already exist! Continue OR rename it and enter this command again. Continue? [y, n] \033[0m')
+        if action != 'y':
+            print('Command was canceled!')
+            return 'OK: cancel command'
+        else:
+            print('Continue...')
+
     # создание новой директории в Google Drive для дальнейшего копирования файлов туда
     folder_metadata = {
         'name': dir_name,

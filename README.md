@@ -72,5 +72,4 @@ ROOT_CONTENT = [
 ### 11) help
 ### 12) rm (just for files created by service account)
 
-### -  13) переименовывать файл (при put), если файл с таким именем уже есть
-### -  14) drive history
+### -  13) drive history

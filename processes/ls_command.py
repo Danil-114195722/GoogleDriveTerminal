@@ -15,7 +15,7 @@ def show_cur_dir_content() -> str:
     # преобразуем контент в строку
     str_content = ''
     for elem in list_content:
-        str_content += '\n' + elem[0] + ' -- ' + elem[1]
+        str_content += '\n' + elem[0] + ' -- \033[34m' + elem[1] + '\033[0m'
         # подсчёт кол-ва папок и файлов
         if elem[0] == 'dir':
             num_dir += 1
@@ -46,4 +46,4 @@ def update_content_info() -> None:
     ]
 
     set_cur_dir_content(content=dir_content)
-    print(f"{dir_name}'s content was updated")
+    print(f'''\033[32m"{dir_name}" content was updated\033[0m''')

@@ -14,6 +14,15 @@ def make_new_dir(new_dir_name: str) -> str:
     if not parent_dir_id:
         return 'ERROR: cannot make dir in "root"'
 
+    # юзер ввёл существующую директорию
+    if new_dir_name in map(lambda sublist: sublist[1], cur_content):
+        action = input('\033[33mWARNING: such dir already exist! Continue OR rename it and enter this command again. Continue? [y, n] \033[0m')
+        if action != 'y':
+            print('Command was canceled!')
+            return 'OK: cancel command'
+        else:
+            print('Continue...')
+
     folder_metadata = {
         'name': new_dir_name,
         'mimeType': 'application/vnd.google-apps.folder',

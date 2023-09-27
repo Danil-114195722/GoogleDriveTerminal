@@ -38,7 +38,7 @@ def download_file(file_name: str) -> str:
             local_file.write(file.getvalue())
 
         # вывод успеха
-        print('Successfully')
+        print('\033[32mSuccessfully\033[0m')
         return f'OK: file "{file_name}" was downloaded'
 
     except HttpError as error:
@@ -62,7 +62,7 @@ def download_file_custom_dir(file_id: str, file_name: str, need_local_dir: str) 
         local_file.write(file.getvalue())
 
     # вывод успеха
-    print(': successfully')
+    print('\033[32m: successfully\033[0m')
 
 
 def download_dir(dir_name: str, path: str, content: list) -> None:

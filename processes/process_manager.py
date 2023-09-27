@@ -95,7 +95,7 @@ def process_put(command: str) -> str:
 
     result = put_command.main_put(clear_command=clear_command)
 
-    if clear_command.startswith('-r'):
+    if clear_command.startswith('-r') and result != 'OK: cancel command':
         print('Update current dir info...')
         ls_command.update_content_info()
 

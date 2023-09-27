@@ -24,7 +24,7 @@ def remove_service_file(file_name: str) -> str:
     except HttpError:
         return f'ERROR: cannot remove "{file_name}", permission denied!'
 
-    print(f'File "{file_name}" was deleted.')
+    print(f'\033[32mFile "{file_name}" was deleted\033[0m')
     # обновляем список содержимого текущей папки
     cur_content.remove(['file', file_name, file_id_to_delete])
     set_cur_dir_content(content=cur_content)
