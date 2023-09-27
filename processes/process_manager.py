@@ -126,11 +126,11 @@ def process_history(command: str) -> str:
     except ValueError:
         num = ''
 
-    all_his = get_history()
+    all_his = [f' {iter_num}  {elem}' for iter_num, elem in enumerate(get_history(), 0)]
     if not num:
-        history = '\n '.join(all_his)
+        history = '\n'.join(all_his)
     else:
-        history = '\n '.join(all_his[-num:])
+        history = '\n'.join(all_his[-num:])
 
     print(history)
     return f'OK: {command}'
