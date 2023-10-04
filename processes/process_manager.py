@@ -167,8 +167,8 @@ def process_manage(command: str) -> str:
     # если команды нет в словаре
     except KeyError:
         feedback = 'ERROR: invalid command!'
-    # except Exception as error:
-    #     return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
+    except Exception as error:
+        return f'FATAL!!!\nWhile processing command "{command}" you got error:\n{error}'
 
     # добавляем команду в историю
     add_history(command=command)
