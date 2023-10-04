@@ -41,8 +41,24 @@ def download_file(file_name: str) -> str:
         print('\033[32mSuccessfully\033[0m')
         return f'OK: file "{file_name}" was downloaded'
 
-    except HttpError as error:
-        return f'ERROR: you got HttpError while processing "get" command: {error}'
+    # если нужно загрузить Google документ/таблицу/презентацию
+    except HttpError:
+        try:
+            request = SERVICE.files().export_media(fileId=file_id, mimeType='application/pdf')
+
+            # загрузка байт в локальный файл
+            with open(f'{file_name}.pdf', 'wb') as local_file:
+                downloader = MediaIoBaseDownload(local_file, request)
+
+                done = False
+                while not done:
+                    status, done = downloader.next_chunk()
+
+            # вывод успеха
+            print('\033[32mSuccessfully\033[0m')
+            return f'OK: file "{file_name}" was downloaded'
+        except HttpError as error:
+            return f'ERROR: you got HttpError while processing "get" command: {error}'
 
 
 def download_file_custom_dir(file_id: str, file_name: str, need_local_dir: str) -> None:
