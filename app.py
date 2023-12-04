@@ -1,11 +1,15 @@
 #!/home/danil/anaconda3/envs/stable/bin/python
 
+import readline
 
 from work_with_state.current_dir_writter import get_cur_dir
 from processes import cd_command, process_manager
 
 
 def main() -> None:
+    # Отключение обработки управляющих символов
+    readline.parse_and_bind("")
+
     # по дефолту переходим в корень диска
     cd_command.move_to_root()
 
