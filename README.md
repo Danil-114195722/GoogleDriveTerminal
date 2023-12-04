@@ -72,3 +72,8 @@ ROOT_CONTENT = [
 ### 11) help
 ### 12) rm (just for files created by service account)
 ### 13) history
+
+<br><hr>
+
+## By last update I've added the ability to use keyboard arrows just like in the terminal.
+## That is, "RIGHT" and "LEFT" arrows manage the carriage location and "UP" and "DOWN" arrows help you switch between command history
