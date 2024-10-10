@@ -1,3 +1,6 @@
+## TODO: Make recursive removing dirs
+## TODO: Build a package (SDK) with client for convinient multiuser using
+
 ## To create Google API Key (JSON-file) you need:
 ### 1) Register on [Google Cloud](https://cloud.google.com/artifact-registry)
 ### 2) Create [new project](https://console.cloud.google.com/projectcreate?previousPage=%2Fapis%2Flibrary%3Fproject%3Dconcise-ion-399020&organizationId=0) (use existing project if you want)
